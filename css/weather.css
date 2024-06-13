@@ -1,0 +1,17 @@
+* {
+    margin:0;
+    box-sizing: border-box;
+}
+body {
+    background-color: grey;
+
+}
+body {
+    transition: background-color 0.5s ease, background-image 0.5s ease;
+}
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

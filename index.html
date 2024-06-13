@@ -1,55 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEATHER-NEWS</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/weather.css" class="src">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEATHER-NEWS</title>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+    rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/weather.css" type="text/css">
 </head>
+
 <body>
-    <navbar>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">weather-App</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
+  <div class="container py3">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">WEATHER-WEBSITE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+           
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Common-cities
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Delhi</a></li>
+                <li><a class="dropdown-item" href="#">Mumbai</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Banglore</a></li>
+              </ul>
+            </li>
+            
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" id="inputbox"type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success"id="button" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 font-weight-bold">Weather in <span id="city"></span></h1>
+      <i><b><p id="description">Loading...</p></b></i>
+    </div>
+    </header>
+    <main>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header bg-info py-3">
+              <h3 class="mb-0 bg-info fw-normal">Temperatures</h3>
             </div>
-          </nav>
-    </navbar>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-   
-    <script src="js/weather.js"></script>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="temp"></span><small class="text-muted fw-light">&#176C</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <!-- <li>feelslike is <span id="feels_like"></span></li> -->
+                <li>max temp. is <span id="temp_max"></span></li>
+                <li>min temp. is <span id="temp_min"></span></li>
+             
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header bg-info py-3">
+              <h3 class="my-0 fw-normal">Humidity Info</h3>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="humidity"></span><small class="text-muted fw-light">%</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>feels like <span id="feels_like"></span></li> 
+                
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header bg-info py-3 text-bg-primary border-primary">
+              <h3 class="my-0 fw-normal">Wind Info</h3>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="speed"></span><small class="text-muted fw-light">km/hr</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                
+                <li>Wind Degree is <span id="deg"></span></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="display-6 text-center mb-4">7-days forecast</h2>
+
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>  
+              <th style="width: 22%;">Days</th>
+              <th style="width: 22%;">Precipitation</th>
+              <th style="width: 22%;">Wind</th>
+              <th style="width: 22%;">Humidity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Sunday</th>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Monday</th>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Tuesday</th>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Wedenesday</th>
+              <td></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Thursday</th>
+              <td></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Friday</th>
+              <td></td>
+              <td></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Saturday</th>
+              <td></td>
+              <td></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <script type="text/javascript" src="js/weather.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  
 </body>
+
 </html>
