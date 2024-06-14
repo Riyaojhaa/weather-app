@@ -24,8 +24,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
            
@@ -42,13 +42,15 @@
                 </li>
                 <li><a class="dropdown-item" href="#">Banglore</a></li>
               </ul>
-            </li>
+            </li> -->
             
-          </ul>
+          </ul> 
           <form class="d-flex" role="search">
             <input class="form-control me-2" id="inputbox"type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success"id="button" type="submit">Search</button>
           </form>
+          <p>--OR--</p>
+          <button class="btn btn-outline-success" id="button2" >using-current-location</button>
         </div>
       </div>
     </nav>
@@ -108,84 +110,56 @@
         </div>
       </div>
 
-      <h2 class="display-6 text-center mb-4">7-days forecast</h2>
+      <h2 class="display-6 text-center mb-4">5-days forecast</h2>
 
       <div class="table-responsive">
         <table class="table text-center">
           <thead>
             <tr>  
               <th style="width: 22%;">Days</th>
-              <th style="width: 22%;">Precipitation</th>
-              <th style="width: 22%;">Wind</th>
-              <th style="width: 22%;">Humidity</th>
+              <th style="width: 22%;">Temperature (&#176C)</th>
+              <th style="width: 22%;">Wind (km/hr)</th>
+              <th style="width: 22%;">Humidity (%)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row" class="text-start">Sunday</th>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
+              <th scope="row" class="text-start"><span id="date1"></span></th>
+              <td><span id="temp1"></span></td>
+              <td><span id="wind1"></span></td>
+              <td><span id="humidity1"></span></td>
               
             </tr>
             <tr>
-              <th scope="row" class="text-start">Monday</th>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
+              <th scope="row" class="text-start"><span id="date2"></span></th>
+              <td><span id="temp2"></span></td>
+              <td><span id="wind2"></span></td>
+              <td><span id="humidity2"></span></td>
               
             </tr>
           </tbody>
 
           <tbody>
             <tr>
-              <th scope="row" class="text-start">Tuesday</th>
-              <td><svg class="bi" width="24" height="24">
-                  <use xlink:href="#check"></use>
-                </svg></td>
-              <td><svg class="bi" width="24" height="24">
-                  <use xlink:href="#check"></use>
-                </svg></td>
-              <td><svg class="bi" width="24" height="24">
-                  <use xlink:href="#check"></use>
-                </svg></td>
+              <th scope="row" class="text-start"><span id="date3"></span></th>
+              <td><span id="temp3"></span></td>
+              <td><span id="wind3"></span></td>
+              <td><span id="humidity3"></span></td>
             </tr>
             <tr>
-              <th scope="row" class="text-start">Wedenesday</th>
-              <td></td>
-              <td><svg class="bi" width="24" height="24">
-                  <use xlink:href="#check"></use>
-                </svg></td>
-              <td><svg class="bi" width="24" height="24">
-                  <use xlink:href="#check"></use>
-                </svg></td>
+              <th scope="row" class="text-start"><span id="date4"></span></th>
+              <td><span id="temp4"></span></td>
+              <td><span id="wind4"></span></td>
+              <td><span id="humidity4"></span></td>
             </tr>
             <tr>
-              <th scope="row" class="text-start">Thursday</th>
-              <td></td>
-              <td><svg class="bi" width="24" height="24">
-                  <use xlink:href="#check"></use>
-                </svg></td>
-              <td><svg class="bi" width="24" height="24">
-                  <use xlink:href="#check"></use>
-                </svg></td>
+              <th scope="row" class="text-start"><span id="date5"></span></th>
+              <td><span id="temp5"></span></td>
+              <td><span id="wind5"></span></td>
+              <td><span id="humidity5"></span></td>
             </tr>
-            <tr>
-              <th scope="row" class="text-start">Friday</th>
-              <td></td>
-              <td></td>
-              <td><svg class="bi" width="24" height="24">
-                  <use xlink:href="#check"></use>
-                </svg></td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-start">Saturday</th>
-              <td></td>
-              <td></td>
-              <td><svg class="bi" width="24" height="24">
-                  <use xlink:href="#check"></use>
-                </svg></td>
-            </tr>
+            
+            
           </tbody>
         </table>
       </div>
